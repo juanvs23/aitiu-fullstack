@@ -1,0 +1,6 @@
+node_modules
+.prettierignore
+.prettierrc
+dist
+package.json
+uploads

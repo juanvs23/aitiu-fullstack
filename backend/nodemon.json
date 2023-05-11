@@ -1,0 +1,4 @@
+{
+    "ext": "js,json,env,html",
+    "ignore": [["node_modules", "uploads"]]
+}
