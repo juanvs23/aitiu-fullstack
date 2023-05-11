@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import { Information, Document, Profile } from './form';
 import { setFormData, setStep, setProcess } from '../../app/index';
 import styled from 'styled-components';
-import { MySwal } from './FormError';
 
 const FormWrapper = styled.div`
 	min-height: 40vh;
@@ -49,7 +48,6 @@ const FormComponent = () => {
 			{ProfileStep}
 			{InformationStep}
 			{Documenttep}
-			{MySwal}
 		</FormWrapper>
 	);
 };

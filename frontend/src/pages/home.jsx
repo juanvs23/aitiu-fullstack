@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { InformationCircleIcon } from '@heroicons/react/24/solid';
 import { useSelector, useDispatch } from 'react-redux';
-import { getVerified } from '../app/index';
+import { getVerified, resetRegister } from '../app/index';
 import { Layout, Modal } from '../components';
 
 const SendComponent = ({ open }) => {
@@ -37,6 +37,7 @@ const HomeComponent = () => {
 		</Modal>
 	);
 	useEffect(() => {
+		dispatch(resetRegister());
 		dispatch(getVerified());
 		setTimeout(() => {
 			setActiveModal(true);

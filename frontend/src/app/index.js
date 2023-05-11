@@ -1,5 +1,4 @@
 export { store } from './store';
-// export { stepSlice } from './features/steps/stepSlicer';
 export {
 	setStep,
 	incrementStep,
@@ -10,6 +9,6 @@ export {
 	setFormData,
 	setProcess,
 	getVerified,
+	resetRegister,
 	uploadImage,
 } from './features/register/RegisterSlicer';
-export { default as useRegister } from './features/register/useRegister';

@@ -85,6 +85,9 @@ export const registerSlice = createSlice({
 		setStep: (state, action) => {
 			state.step = action.payload;
 		},
+		resetRegister: state => {
+			state = initialState;
+		},
 		incrementStep: state => {
 			state.step += 1;
 		},
@@ -156,10 +159,10 @@ export const registerSlice = createSlice({
 				state.errors = null;
 				if (action.payload.data.status === 200) {
 					state.process = { ...state.process, confirmation: true };
-					state.formData = action.payload.data.data;
-					state.step = 4;
-
-					const { firstname, lastname, email } = action.payload.data.data;
+					const { step, data } = action.payload.data.data;
+					state.formData = data;
+					state.step = step;
+					const { firstname, lastname, email } = data;
 					localStorage.setItem(
 						'access-home',
 						JSON.stringify({ firstname, lastname, email, emailVerified: true })
@@ -188,7 +191,14 @@ export const registerSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setStep, incrementStep, decrementStep, setFormData, setProcess, getVerified } =
-	registerSlice.actions;
+export const {
+	setStep,
+	incrementStep,
+	decrementStep,
+	setFormData,
+	setProcess,
+	getVerified,
+	resetRegister,
+} = registerSlice.actions;
 
 export default registerSlice.reducer;
